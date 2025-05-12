@@ -1,5 +1,3 @@
-% workflow to split duty-cycled xwavs
-
 %WORKFLOW_SPLITXWAVS.M
 %	Workflow to split duty-cycled XWAVs into individual files
 %
@@ -19,10 +17,10 @@
 %        from the XWAV header.
 %
 %        To run:
-%           - Update the path to the split-xwavs code folder on line 42
-%           - Set the input xwav path on line 47 or comment that line out
-%           to be prompted to select a folder
-%           - Set the output folder on line 59 (it will be created if it
+%           - Update the path to the split-xwavs code folder on line 44
+%           - Set the input xwav path on line 48 or leave as is to be 
+%             prompted to select a folder 
+%           - Set the output folder on line 56 (it will be created if it
 %           doesn't already exist)
 %
 %	Notes
@@ -35,7 +33,7 @@
 %	Authors:
 %		S. Fregosi <selene.fregosi@gmail.com> <https://github.com/sfregosi>
 %
-%	Updated:   9 May 2025
+%	Updated:   12 May 2025
 %
 %	Created with MATLAB ver.: 24.2.0.2740171 (R2024b) Update 1
 % %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -43,22 +41,19 @@
 %% User specified inputs
 
 % add code to path
-% path_code = ('C:\Users\selene.fregosi\Documents\MATLAB\split-xwavs');
-path_code = 'C:\Users\selene.fregosi\Documents\MATLAB\myUtils\split_xwavs_scratch';
+path_code = 'C:\Users\User.Name\Documents\MATLAB\split-xwavs';
 addpath(genpath(path_code));
 
 % set input directory
-path_xwavs = 'C:\Users\selene.fregosi\Desktop\split_xwav_test\in\Wake_S_04';
-% path_xwavs = 'C:\Users\selene.fregosi\Desktop\split_xwav_test\in\Wake_S_10';
+path_xwavs = 'E:\original_xwavs';
 % alternatively just prompt to select path to process
 if ~exist('path_xwavs', 'var')
     path_xwavs = uigetdir(path_in, 'Select folder containing xwavs');
     fprintf(1, 'Selected xwav directory: %s\n', path_xwavs);
 end
 
-% set output directory
-% will be created in writesplitXwavs if it doesn't exist
-path_split = ('C:\Users\selene.fregosi\Desktop\split_xwav_test\split');
+% set output directory - will be created if it doesn't exist
+path_split = ('E:\split_xwavs');
 if ~exist(path_split, 'dir'); mkdir(path_split); end
 
 fprintf(1, 'Splitting xwavs in %s\n', path_xwavs);

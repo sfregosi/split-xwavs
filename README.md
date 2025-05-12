@@ -11,9 +11,9 @@ This code provides a workaround where each XWAV is split into multiple XWAVs mad
 
 Use the `workflow_splitXwavs.m` script to process a directory of files: 
 
-- Update `path_code` on Line 47 to point to the directory where you cloned/downloaded this repository
-- Update `path_xwavs` on Line 50 to point to the directory containing the original XWAVs. Alternatively you can leave this line alone and it will prompt you to select a directory.
-- Update `path_split` on Line 58 to specify the output directory where the split files should be saved. If this directory doesn't exist it will be created. 
+- Update `path_code` on Line 44 to point to the directory where you cloned/downloaded this repository
+- Update `path_xwavs` on Line 48 to point to the directory containing the original XWAVs. Alternatively you can leave this line alone and it will prompt you to select a directory.
+- Update `path_split` on Line 56 to specify the output directory where the split files should be saved. If this directory doesn't exist it will be created. 
 - Hit Run
 - Check the Command Window for status updates. After it identifies all the gaps it will pause and you must hit ENTER to confirm the info is valid to continue
 
